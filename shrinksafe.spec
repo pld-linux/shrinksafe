@@ -1,4 +1,4 @@
-Summary:	Dojo toolkit's JavaScript obfuscator
+Summary:	Dojo toolkit's JavaScript compressor
 Name:		shrinksafe
 Version:	0
 Release:	0.1
@@ -14,7 +14,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Dojo toolkit's JavaScript obfuscator.
+Dojo toolkit's JavaScript compressor.
 
 %prep
 %setup -qcT
