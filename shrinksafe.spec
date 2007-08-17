@@ -1,7 +1,7 @@
 Summary:	Dojo toolkit's JavaScript compressor
 Name:		shrinksafe
 Version:	0
-Release:	0.1
+Release:	0.2
 License:	AFL 2.1 or BSD
 Group:		Applications
 Source0:	http://svn.dojotoolkit.org/dojo/trunk/buildscripts/lib/custom_rhino.jar
@@ -20,7 +20,7 @@ Dojo toolkit's JavaScript compressor.
 %setup -qcT
 cat <<'EOF' >> %{name}
 #!/bin/sh
-exec java -jar %{_javadir}/%{name}_rhino.jar -c "$@"
+exec java -jar %{_javadir}/%{name}_rhino.jar "$@"
 EOF
 
 %install
