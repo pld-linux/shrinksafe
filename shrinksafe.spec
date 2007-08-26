@@ -1,4 +1,5 @@
 Summary:	Dojo toolkit's JavaScript compressor
+Summary(pl.UTF-8):	Kompresor JavaScriptu z zestawu narzędzi Dojo
 Name:		shrinksafe
 Version:	0
 Release:	0.2
@@ -15,6 +16,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Dojo toolkit's JavaScript compressor.
+
+%description -l pl.UTF-8
+Kompresor JavaScriptu z zestawu narzędzi Dojo.
 
 %prep
 %setup -qcT
