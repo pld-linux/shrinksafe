@@ -1,8 +1,9 @@
+%include	/usr/lib/rpm/macros.java
 Summary:	Dojo toolkit's JavaScript compressor
 Summary(pl.UTF-8):	Kompresor JavaScriptu z zestawu narzędzi Dojo
 Name:		shrinksafe
 Version:	0
-Release:	0.2
+Release:	1
 License:	AFL 2.1 or BSD
 Group:		Applications
 Source0:	http://svn.dojotoolkit.org/dojo/trunk/buildscripts/lib/custom_rhino.jar
@@ -10,6 +11,7 @@ Source0:	http://svn.dojotoolkit.org/dojo/trunk/buildscripts/lib/custom_rhino.jar
 URL:		http://dojotoolkit.org/docs/shrinksafe
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	jpackage-utils
 Requires:	jre >= 1.4
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
