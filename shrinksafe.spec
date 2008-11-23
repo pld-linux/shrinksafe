@@ -2,13 +2,19 @@
 Summary:	Dojo toolkit's JavaScript compressor
 Summary(pl.UTF-8):	Kompresor JavaScriptu z zestawu narzędzi Dojo
 Name:		shrinksafe
-Version:	0
+Version:	1.2.2
 Release:	1
-License:	AFL 2.1 or BSD
+License:	MPL 1.1
 Group:		Applications
-Source0:	http://svn.dojotoolkit.org/dojo/trunk/buildscripts/lib/custom_rhino.jar
-# Source0-md5:	260f96b8e030ed1cb5ce08ceb4a72b81
+Source0:	http://download.dojotoolkit.org/release-1.2.2/dojo-release-%{version}-%{name}.tar.gz
+# Source0-md5:	db5314f7cf08be30a6a1da46196b793a
+Source1:	http://ftp.mozilla.org/pub/mozilla.org/js/rhino1_6R7.zip
+# Source1-md5:	7be259ae496aae78feaafe7099e09897
+Source2:	http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/src.zip
+# Source2-md5:	ab016c8f81812bb930fc0f7a69e053c5
 URL:		http://dojotoolkit.org/docs/shrinksafe
+BuildRequires:	ant
+BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
@@ -17,23 +23,34 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Dojo toolkit's JavaScript compressor.
+The premier JavaScript compression engine.
 
 %description -l pl.UTF-8
 Kompresor JavaScriptu z zestawu narzędzi Dojo.
 
 %prep
-%setup -qcT
+%setup -q -n dojo-release-%{version}-%{name} -a1
 cat <<'EOF' >> %{name}
 #!/bin/sh
 exec java -jar %{_javadir}/%{name}_rhino.jar "$@"
 EOF
 
+mv rhino{*,}
+%{__patch} -p0 -d rhino < custom_rhino.diff
+
+%build
+cd rhino
+cat <<'EOF' >> build.properties
+# use local path
+swing-ex-url=file:%{SOURCE2}
+EOF
+%ant -Ddebug=off -Dno-e4x=true -Dno-xmlbeans=true jar
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_javadir}}
 install %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
-install %{SOURCE0} $RPM_BUILD_ROOT%{_javadir}/%{name}_rhino.jar
+install rhino/build/rhino*/*js.jar $RPM_BUILD_ROOT%{_javadir}/%{name}_rhino.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
