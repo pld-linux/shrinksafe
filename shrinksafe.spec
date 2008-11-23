@@ -14,9 +14,11 @@ Source2:	http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/src.
 # Source2-md5:	ab016c8f81812bb930fc0f7a69e053c5
 URL:		http://dojotoolkit.org/docs/shrinksafe
 BuildRequires:	ant
+BuildRequires:	jaxp_parser_impl
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	xml-commons-apis
 Requires:	jpackage-utils
 Requires:	jre >= 1.4
 BuildArch:	noarch
