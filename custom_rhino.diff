@@ -981,20 +981,18 @@
                  if (matchChar('/')) {
                      skipLine();
                      continue retry;
---- toolsrc/org/mozilla/javascript/tools/resources/Messages.properties	2 Sep 2005 14:18:40 -0000	1.22
-+++ toolsrc/org/mozilla/javascript/tools/resources/Messages.properties	30 Jul 2007 17:13:21 -0000
-@@ -55,7 +55,10 @@
-     \    -version 100|110|120|130|140|150\n\
-     \    -opt [-1|0-9]\n\
-     \    -f script-filename\n\
--    \    -e script-source
-+    \    -e script-source\n\
+--- toolsrc/org/mozilla/javascript/tools/resources/Messages.properties~	2009-01-07 14:33:54.000000000 +0200
++++ toolsrc/org/mozilla/javascript/tools/resources/Messages.properties	2009-01-07 14:34:51.155265014 +0200
+@@ -65,6 +65,9 @@
+     \    -opt [-1|0-9]      Set optimization level.\n\
+     \    -f script-filename Execute script file.\n\
+     \    -e script-source   Evaluate inline script.\n\
 +    \    -c compression-input-file\n\
 +    \    -o compression-output-file\n\
-+    \    -E input-character-set
- 
- 
- msg.help =\
++    \    -E input-character-set\n\
+     \    -debug             Generate debug code.\n\
+     \    -strict            Enable strict mode warnings.\n\
+     \    -fatal-warnings    Treat warnings as errors.
 --- toolsrc/org/mozilla/javascript/tools/shell/Main.java	30 Sep 2005 08:28:51 -0000	1.65
 +++ toolsrc/org/mozilla/javascript/tools/shell/Main.java	30 Jul 2007 17:13:21 -0000
 @@ -66,6 +66,12 @@
