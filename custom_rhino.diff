@@ -1,8 +1,3 @@
-Index: src/org/mozilla/javascript/BaseFunction.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/BaseFunction.java,v
-retrieving revision 1.57
-diff -u -r1.57 BaseFunction.java
 --- src/org/mozilla/javascript/BaseFunction.java	30 Aug 2005 10:05:42 -0000	1.57
 +++ src/org/mozilla/javascript/BaseFunction.java	30 Jul 2007 17:13:21 -0000
 @@ -373,6 +373,28 @@
@@ -34,11 +29,6 @@ diff -u -r1.57 BaseFunction.java
      public int getArity() { return 0; }
  
      public int getLength() { return 0; }
-Index: src/org/mozilla/javascript/Context.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/Context.java,v
-retrieving revision 1.244
-diff -u -r1.244 Context.java
 --- src/org/mozilla/javascript/Context.java	4 Nov 2005 13:37:45 -0000	1.244
 +++ src/org/mozilla/javascript/Context.java	30 Jul 2007 17:13:21 -0000
 @@ -1178,6 +1178,33 @@
@@ -125,11 +115,6 @@ diff -u -r1.244 Context.java
          if (returnFunction) {
              if (!(tree.getFunctionCount() == 1
                    && tree.getFirstChild() != null
-Index: src/org/mozilla/javascript/Decompiler.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/Decompiler.java,v
-retrieving revision 1.19
-diff -u -r1.19 Decompiler.java
 --- src/org/mozilla/javascript/Decompiler.java	28 Aug 2005 23:25:22 -0000	1.19
 +++ src/org/mozilla/javascript/Decompiler.java	30 Jul 2007 17:13:21 -0000
 @@ -37,6 +37,11 @@
@@ -933,11 +918,6 @@ diff -u -r1.19 Decompiler.java
      /**
       * Decompile the source information associated with this js
       * function/script back into a string.  For the most part, this
-Index: src/org/mozilla/javascript/NativeFunction.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/NativeFunction.java,v
-retrieving revision 1.62
-diff -u -r1.62 NativeFunction.java
 --- src/org/mozilla/javascript/NativeFunction.java	17 Jan 2005 13:06:33 -0000	1.62
 +++ src/org/mozilla/javascript/NativeFunction.java	30 Jul 2007 17:13:21 -0000
 @@ -70,6 +70,26 @@
@@ -967,11 +947,6 @@ diff -u -r1.62 NativeFunction.java
      public int getLength()
      {
          int paramCount = getParamCount();
-Index: src/org/mozilla/javascript/ScriptRuntime.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/ScriptRuntime.java,v
-retrieving revision 1.250
-diff -u -r1.250 ScriptRuntime.java
 --- src/org/mozilla/javascript/ScriptRuntime.java	12 Jan 2006 06:32:57 -0000	1.250
 +++ src/org/mozilla/javascript/ScriptRuntime.java	30 Jul 2007 17:13:21 -0000
 @@ -575,7 +575,6 @@
@@ -982,11 +957,6 @@ diff -u -r1.250 ScriptRuntime.java
          for(int i = 0, L = s.length(); i != L; ++i) {
              int c = s.charAt(i);
  
-Index: src/org/mozilla/javascript/TokenStream.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/src/org/mozilla/javascript/TokenStream.java,v
-retrieving revision 1.63
-diff -u -r1.63 TokenStream.java
 --- src/org/mozilla/javascript/TokenStream.java	31 Jul 2005 13:48:46 -0000	1.63
 +++ src/org/mozilla/javascript/TokenStream.java	30 Jul 2007 17:13:21 -0000
 @@ -64,9 +64,12 @@
@@ -1011,11 +981,6 @@ diff -u -r1.63 TokenStream.java
                  if (matchChar('/')) {
                      skipLine();
                      continue retry;
-Index: toolsrc/org/mozilla/javascript/tools/resources/Messages.properties
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/toolsrc/org/mozilla/javascript/tools/resources/Messages.properties,v
-retrieving revision 1.22
-diff -u -r1.22 Messages.properties
 --- toolsrc/org/mozilla/javascript/tools/resources/Messages.properties	2 Sep 2005 14:18:40 -0000	1.22
 +++ toolsrc/org/mozilla/javascript/tools/resources/Messages.properties	30 Jul 2007 17:13:21 -0000
 @@ -55,7 +55,10 @@
@@ -1030,11 +995,6 @@ diff -u -r1.22 Messages.properties
  
  
  msg.help =\
-Index: toolsrc/org/mozilla/javascript/tools/shell/Main.java
-===================================================================
-RCS file: /cvsroot/mozilla/js/rhino/toolsrc/org/mozilla/javascript/tools/shell/Main.java,v
-retrieving revision 1.65
-diff -u -r1.65 Main.java
 --- toolsrc/org/mozilla/javascript/tools/shell/Main.java	30 Sep 2005 08:28:51 -0000	1.65
 +++ toolsrc/org/mozilla/javascript/tools/shell/Main.java	30 Jul 2007 17:13:21 -0000
 @@ -66,6 +66,12 @@
