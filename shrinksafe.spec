@@ -19,6 +19,7 @@ BuildRequires:	jaxp_parser_impl
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	unzip
 BuildRequires:	xml-commons-apis
 Requires:	jpackage-utils
 Requires:	jre >= 1.4
