@@ -13,7 +13,7 @@ Source1:	http://ftp.mozilla.org/pub/mozilla.org/js/rhino1_6R7.zip
 Source2:	http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/src.zip
 # Source2-md5:	ab016c8f81812bb930fc0f7a69e053c5
 Patch0:		custom_rhino.diff
-URL:		http://dojotoolkit.org/docs/shrinksafe
+URL:		http://shrinksafe.dojotoolkit.org/
 BuildRequires:	ant
 BuildRequires:	jaxp_parser_impl
 BuildRequires:	jpackage-utils
