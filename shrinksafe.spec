@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.java
 Summary:	Dojo toolkit's JavaScript compressor
 Summary(pl.UTF-8):	Kompresor JavaScriptu z zestawu narzędzi Dojo
 Name:		shrinksafe
