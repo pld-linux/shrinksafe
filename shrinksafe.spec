@@ -40,7 +40,7 @@ EOF
 
 mv rhino{*,}
 cd rhino
-%patch0 -p0
+%patch -P0 -p0
 cd -
 
 %build
